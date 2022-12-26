@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  json_to_db_api:
+    container_name: json_to_db_api
+    build: .
+    restart: always
+    environment:
+      TZ: Europe/Moscow
+      SQLALCHEMY_DB_URL: ${SQLALCHEMY_DB_URL}
+      SSLMODE: ${SSLMODE}
+      TARGET_SESSION_ATTRS: ${TARGET_SESSION_ATTRS}
+
+ 
+  nginx:
+

@@ -10,8 +10,7 @@ dotenv_path = os.path.join(BASE_DIR, '.env')
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
-SQLALCHEMY_DB_URL = (f'postgresql://{os.getenv("PG_USER")}:{os.getenv("PG_PASSWORD")}'
-                     f'@{os.getenv("PG_HOST")}:{os.getenv("PG_PORT")}/{os.getenv("PG_DB")}')
+SQLALCHEMY_DB_URL = os.getenv('SQLALCHEMY_DB_URL')
 connection_args = {'sslmode': os.getenv('SSLMODE'),
                    'target_session_attrs': os.getenv('TARGET_SESSION_ATTRS')}
 
